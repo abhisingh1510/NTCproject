@@ -1,0 +1,55 @@
+<% include adminmenu %>
+<% include slider %>
+
+<div id="page">
+		<div id="content">
+			<div class="box">
+                
+                <table border="2px solid grey" cellspacing='10'>
+                    <% for(i=0;i<data.length;i++){ %>
+                    <tr>
+                        <td><font style="font-size:10px"><%=data[i].emp_no%></font></td>
+                        <td><font style="font-size:10px"><%=data[i].name%></font></td>
+                        <td><font style="font-size:10px"><%=data[i].designation%></font></td>
+                        <td><font style="font-size:10px"><%=data[i].address%></font></td>
+                        <td><font style="font-size:10px"><%=data[i].contact_no%></font></td>
+                        <td><font style="font-size:10px"><%=data[i].gender%></font></td>
+                        <td><img src='../uploads/<%=data[i].photo%>' height="100" width="100"></td>
+                    </tr>   
+                    <% } %>
+                </table>        
+                <center>
+                    <button><a href="/admin/list">Back</a></button>
+                </center>
+                </div>
+		</div>
+            
+        <div id="sidebar">
+                <div class="box">
+                    <h3>Important Links</h3>
+                    <ul class="list">
+                        <li class="first"><a href="http://www.ntcltd.org/News_Details.aspx">Organizational News</a></li>
+                        <li><a href="http://www.ntcltd.org/Tender.aspx">Tenders</a></li>
+                        <li><a href="http://www.ntcltd.org/Product.aspx">Products</a></li>
+                        <li><a href="http://mis.ntcltd.org/myaccount/">NTC-Apps</a></li>
+                        <li class="last"><a href="http://www.ntcltd.org/ouroffices.aspx">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h3>Activity Log</h3>
+                    <div class="date-list">
+                        <ul class="list date-list">
+                            <li class="first"><span class="date">24/06</span> <a href="#">Project Started</a></li>
+                            <li><span class="date">24/06</span> <a href="#">Template Installed</a></li>
+                            <li><span class="date">24/06</span> <a href="#">Template Edited</a></li>
+                            <li class="last"><span class="date">24/06</span> <a href="#">UI Completed</a></li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+        <br class="clearfix" />
+    </div>
+    
+<% include pagebottom %>
+
+

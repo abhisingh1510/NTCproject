@@ -1,0 +1,255 @@
+<% include adminmenu %>
+<% include slider %>
+
+<script type="text/javascript" src="../javascripts/jquery.min"></script>
+<script type="text/javascript">
+    $("#btnprint").live("click", function () {
+        var divContents = $("#printme").html();
+        var printWindow = window.open('', '', 'height=400,width=800');
+        printWindow.document.write('<html><head><title>New Bhopal Textile Mills,Bhopal<br>A Unit of National Textile Corporation, New Delhi</title>');
+        printWindow.document.write('</head><body >');
+        printWindow.document.write(divContents);
+        printWindow.document.write('</body></html>');
+        printWindow.document.close();
+        printWindow.print();
+    });
+</script>
+
+<script>
+    function sal_gen()
+    {
+    var basic=document.getElementById('basic').textContent
+    var da=document.getElementById('da').value
+    var hra=document.getElementById('hra').value
+    var ca=document.getElementById('ca').value
+    var others_add=document.getElementById('others_add').value
+    var gross_sal=document.getElementById('gross_sal')
+    var ma=document.getElementById('ma').value
+    var pf=document.getElementById('pf')
+    var esi=document.getElementById('esi')
+    var fa=document.getElementById('fa').value
+    var ga=document.getElementById('ga').value
+    var it=document.getElementById('it').value
+    var pt=document.getElementById('pt').value
+    var ea=document.getElementById('ea').value
+    var li=document.getElementById('li').value
+    var tf=document.getElementById('tf').value
+    var dc=document.getElementById('dc').value
+    var others_ded=document.getElementById('others_ded').value
+    var t_ded=document.getElementById('t_ded')
+    var net_pay=document.getElementById('net_pay')
+    var a,b,c,d,e
+    
+    a=da*1+hra*1+ca*1+others_add*1+basic*1
+    
+    c=da*1+basic*1
+    
+    gross_sal.innerHTML=a
+    
+    d=(0.12*c).toFixed(2)
+    
+    pf.innerHTML=d
+
+    e=(0.0175*c).toFixed(2)
+
+    esi.innerHTML=e
+    
+    b=(ma*1+d*1+e*1+fa*1+ga*1+it*1+pt*1+ea*1+li*1+tf*1+dc*1+others_ded*1).toFixed(2)
+    
+    t_ded.innerHTML=b
+    
+    var x=(a-b).toFixed(2)
+
+    net_pay.innerHTML=x
+    }
+</script>
+
+<div id="page">
+		<div id="content">
+			<div class="box">
+                <center>
+                <div id="printme" class="box">
+                    <center>
+                    <h2>Salary Slip</h2>
+                 
+                    <table style="border: 2px solid black;border-spacing: 10px" border="2px solid black;border-spacing:10px" cellspacing='10'>
+                        <tr>
+                            <td>
+                                Employee No.
+                            </td>
+                            <td>
+                                <%=sal[0].emp_no%>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Month</td>
+                            <td>
+                                <%=sal[0].month%>,<%= sal[0].year %>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Basic Pay</td>
+                            <td>
+                                <h4 id="basic"><%=sal[0].monthly_salary%></h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>D.A.</td>
+                            <td>
+                                <input type="text" name="da" id="da" placeholder="Enter DA" onkeyup="sal_gen()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>H.R.A.</td>
+                            <td>
+                                <input type="text" name="hra" id="hra" placeholder="Enter HRA" onkeyup="sal_gen()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Conveyance Alw.</td>
+                            <td>
+                                <input type="text" name="ca" id="ca" placeholder="Enter Conveyance Allowance" onkeyup="sal_gen()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Others</td>
+                            <td>
+                                <input type="text" id="others_add" name="others_add" placeholder="Other Additions" onkeyup="sal_gen()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Gross Salary</td>
+                            <td>
+                                <h4 id="gross_sal"></h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Deductions</b></td>
+                            <td>                              
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Monthly Adv.</td>
+                            <td>
+                                <input type="text" id="ma" name="ma" placeholder="Enter Monthly Advance" onkeyup="sal_gen()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>P.F.</td>
+                            <td>
+                                <h4 id="pf"></h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>E.S.I</td>
+                            <td>
+                                <h3 id="esi"></h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Festival Alw</td>
+                            <td>
+                                <input type="text" id="fa" name="fa" onkeyup="sal_gen()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Grain Adv</td>
+                            <td>
+                                <input type="text" id="ga" name="ga" onkeyup="sal_gen()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Income Tax</td>
+                            <td>
+                                <input type="text" id="it" name="it" onkeyup="sal_gen()">                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Professional Tax</td>
+                            <td>
+                                <input type="text" id="pt" name="pt" onkeyup="sal_gen()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Education Alw</td>
+                            <td>
+                                <input type="text" id="ea" name="ea" onkeyup="sal_gen()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Life Insurance</td>
+                            <td>
+                                <input type="text" id="li" name="li" onkeyup="sal_gen()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Temple Fund</td>
+                            <td>
+                                <input type="text" id="tf" name="tf" onkeyup="sal_gen()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Death Compensation</td>
+                            <td>
+                                <input type="text" id="dc" name="dc" onkeyup="sal_gen()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Others</td>
+                            <td>
+                                <input type="text" id="others_ded" name="others_ded" onkeyup="sal_gen()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Total Deductions</td>
+                            <td>
+                                <h4 id="t_ded"></h4>>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Net Pay</td>
+                            <td>
+                                <h4 id="net_pay"></h4>
+                            </td>
+                        </tr>
+                       
+                    </table>
+                </center>        
+                </div>
+                    <br><br>
+                    <button id="btnprint" style="background-color: skyblue">Generate PDF</button>
+                </center>
+                </div>
+		</div>
+            
+        <div id="sidebar">
+                <div class="box">
+                    <h3>Important Links</h3>
+                    <ul class="list">
+                        <li class="first"><a href="http://www.ntcltd.org/News_Details.aspx">Organizational News</a></li>
+                        <li><a href="http://www.ntcltd.org/Tender.aspx">Tenders</a></li>
+                        <li><a href="http://www.ntcltd.org/Product.aspx">Products</a></li>
+                        <li><a href="http://mis.ntcltd.org/myaccount/">NTC-Apps</a></li>
+                        <li class="last"><a href="http://www.ntcltd.org/ouroffices.aspx">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h3>Activity Log</h3>
+                    <div class="date-list">
+                        <ul class="list date-list">
+                            <li class="first"><span class="date">24/06</span> <a href="#">Project Started</a></li>
+                            <li><span class="date">24/06</span> <a href="#">Template Installed</a></li>
+                            <li><span class="date">24/06</span> <a href="#">Template Edited</a></li>
+                            <li class="last"><span class="date">24/06</span> <a href="#">UI Completed</a></li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+        <br class="clearfix" />
+    </div>
+    
+<% include pagebottom %>
+
+

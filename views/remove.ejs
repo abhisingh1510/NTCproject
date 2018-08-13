@@ -1,0 +1,60 @@
+<% include adminmenu %>
+<% include slider %>
+
+<div id="page">
+		<div id="content">
+			<div class="box">
+				<h2 style="color: red"><%=result%></h2>
+				<br>
+				<h2>Remove Employee</h2>
+                
+                <form method="POST" action="/admin/remove">
+                    <table  cellspacing='10'>
+                        <tr>
+                            <td>Employee Number</td>
+                            <td>
+                            <input type="text" name="emp_no" />    
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td colspan="2">
+                               <center><input type="submit" name="s" value="Remove" /></center>     
+                            </td>
+                        </tr>
+
+                    </table>        
+                </form>
+
+                </div>
+        </div>
+        <div id="sidebar">
+                <div class="box">
+                    <h3>Important Links</h3>
+                    <ul class="list">
+                        <li class="first"><a href="http://www.ntcltd.org/News_Details.aspx">Organizational News</a></li>
+                        <li><a href="http://www.ntcltd.org/Tender.aspx">Tenders</a></li>
+                        <li><a href="http://www.ntcltd.org/Product.aspx">Products</a></li>
+                        <li><a href="http://mis.ntcltd.org/myaccount/">NTC-Apps</a></li>
+                        <li class="last"><a href="http://www.ntcltd.org/ouroffices.aspx">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h3>Activity Log</h3>
+                    <div class="date-list">
+                        <ul class="list date-list">
+                            <li class="first"><span class="date">24/06</span> <a href="#">Project Started</a></li>
+                            <li><span class="date">24/06</span> <a href="#">Template Installed</a></li>
+                            <li><span class="date">24/06</span> <a href="#">Template Edited</a></li>
+                            <li class="last"><span class="date">24/06</span> <a href="#">UI Completed</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <br class="clearfix" />
+        </div>
+    
+	
+<% include pagebottom %>
+
+

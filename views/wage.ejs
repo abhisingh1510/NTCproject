@@ -1,0 +1,76 @@
+<% include adminmenu %>
+<% include slider %>
+
+<div id="page">
+		<div id="content">
+			<div class="box">
+				<h2 style="color:red"><%= result %></h2>
+				<br>
+				<h2>Attendance Portal</h2>
+                
+                <form method="POST" action="/admin/wage" enctype="multipart/form-data">
+                    <table  cellspacing='10'>
+
+                        <tr>
+                            <td>Designation</td>
+                            <td>
+                                <select name="designation">
+                                    <option>Choose an Option</option>
+                                    <% for(i=0;i<data.length;i++){ %>
+                                        <option><%= data[i].category %></option>
+                                    <% } %>
+                                </select>    
+                            </td>
+                            
+                        </tr>
+
+                        <tr>
+
+                            <td>Wage Rate</td>
+                            <td>
+                            <input type="text" name="wage_rate" required="true" />    
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td colspan="2">
+                               <center><input type="submit" name="s" value="Submit" /></center>     
+                            </td>
+                        </tr>
+                        
+                    </table>        
+                </form>
+
+                </div>
+		</div>
+            
+        <div id="sidebar">
+                <div class="box">
+                    <h3>Important Links</h3>
+                    <ul class="list">
+                        <li class="first"><a href="http://www.ntcltd.org/News_Details.aspx">Organizational News</a></li>
+                        <li><a href="http://www.ntcltd.org/Tender.aspx">Tenders</a></li>
+                        <li><a href="http://www.ntcltd.org/Product.aspx">Products</a></li>
+                        <li><a href="http://mis.ntcltd.org/myaccount/">NTC-Apps</a></li>
+                        <li class="last"><a href="http://www.ntcltd.org/ouroffices.aspx">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h3>Activity Log</h3>
+                    <div class="date-list">
+                        <ul class="list date-list">
+                            <li class="first"><span class="date">24/06</span> <a href="#">Project Started</a></li>
+                            <li><span class="date">24/06</span> <a href="#">Template Installed</a></li>
+                            <li><span class="date">24/06</span> <a href="#">Template Edited</a></li>
+                            <li class="last"><span class="date">24/06</span> <a href="#">UI Completed</a></li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+        <br class="clearfix" />
+    </div>
+    
+<% include pagebottom %>
+
+

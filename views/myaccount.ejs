@@ -1,0 +1,74 @@
+<% include usersmenu %>
+<% include slider %>
+
+<div id="page">
+		<div id="content">
+			<div class="box">
+                <center>
+                    <img src="../uploads/<%=data[0].photo%>" height="300" width="300">
+                    <table border="2px solid grey" cellspacing='10'>
+                        <tr>
+                            <td>Name</td>
+                            <td><%=data[0].name%></td>
+                        </tr>
+                        <tr>
+                            <td>Employee Number</td>
+                            <td><%=data[0].emp_no%></td>
+                        </tr>
+                        <tr>
+                            <td>Designation</td>
+                            <td><%=data[0].designation%></td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td><%=data[0].address%></td>
+                        </tr>
+                        <tr>
+                            <td>Contact Number</td>
+                            <td><%=data[0].contact_no%></td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td><%=data[0].gender%></td>
+                        </tr>
+                        <tr>
+                            <td>Date of Birth</td>
+                            <td><%=data[0].dob%></td>
+                        </tr>
+                        
+                    </table>
+                
+                    <button><a href="/users/updateaccount">Update Account</a></button>
+                </center>
+                </div>
+		</div>
+            
+        <div id="sidebar">
+                <div class="box">
+                    <h3>Important Links</h3>
+                    <ul class="list">
+                        <li class="first"><a href="http://www.ntcltd.org/News_Details.aspx">Organizational News</a></li>
+                        <li><a href="http://www.ntcltd.org/Tender.aspx">Tenders</a></li>
+                        <li><a href="http://www.ntcltd.org/Product.aspx">Products</a></li>
+                        <li><a href="http://mis.ntcltd.org/myaccount/">NTC-Apps</a></li>
+                        <li class="last"><a href="http://www.ntcltd.org/ouroffices.aspx">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h3>Activity Log</h3>
+                    <div class="date-list">
+                        <ul class="list date-list">
+                            <li class="first"><span class="date">24/06</span> <a href="#">Project Started</a></li>
+                            <li><span class="date">24/06</span> <a href="#">Template Installed</a></li>
+                            <li><span class="date">24/06</span> <a href="#">Template Edited</a></li>
+                            <li class="last"><span class="date">24/06</span> <a href="#">UI Completed</a></li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+        <br class="clearfix" />
+    </div>
+    
+<% include pagebottom %>
+
+
